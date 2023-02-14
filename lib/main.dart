@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './screen/basic.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +31,34 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Flutter พื้นฐาน 101"),
+      ),
+      body: Container(
+        margin: const EdgeInsets.all(20),
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            const Text(
+              "กรุณาเลือกรายการที่ต้องการ",
+              style: TextStyle(fontSize: 20),
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            ElevatedButton(onPressed:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const BasicFlutter()),);
+            },
+            style: ElevatedButton.styleFrom(
+             fixedSize: const Size(300.0, 50.0),
+            backgroundColor: Colors.deepOrange), 
+            child:const Text("เปิดเพจใหม่จากการกดปุม่")),
+          ],
+        ),
+      ),
+    );
   }
 }
