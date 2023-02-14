@@ -1,5 +1,8 @@
+import 'screen/paddingmargin.dart';
 import 'package:flutter/material.dart';
-import './screen/basic.dart';
+import 'screen/basic.dart';
+import 'screen/rowcolumn.dart';
+import 'screen/listviewcrud.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,15 +50,62 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(
-              height: 20.0,
+              height: 10.0,
             ),
-            ElevatedButton(onPressed:(){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const BasicFlutter()),);
-            },
-            style: ElevatedButton.styleFrom(
-             fixedSize: const Size(300.0, 50.0),
-            backgroundColor: Colors.deepOrange), 
-            child:const Text("เปิดเพจใหม่จากการกดปุม่")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BasicFlutter()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(300.0, 50.0),
+                    backgroundColor: Colors.deepOrange),
+                child: const Text("เปิดเพจใหม่จากการกดปุม่")),
+            const SizedBox(
+              height: 10.0,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const RowColumn()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(300.0, 50.0),
+                    backgroundColor: Colors.deepOrange),
+                child: const Text("Row Column Exapanded")),
+                const SizedBox(
+              height: 10.0,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const PaddingMargin()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(300.0, 50.0),
+                    backgroundColor: Colors.deepOrange),
+                child: const Text("Padding Margin")),
+                 const SizedBox(
+              height: 10.0,
+            ),
+             ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ListViewCrud()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(300.0, 50.0),
+                    backgroundColor: Colors.deepOrange),
+                child: const Text("List View Crud")),
           ],
         ),
       ),
